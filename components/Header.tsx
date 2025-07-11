@@ -10,33 +10,45 @@ const Header = () => {
   const { toggleTheme } = useTheme();
 
   return (
-    <header className="w-full bg-white flex justify-center items-center fixed">
-      <div className="w-[80%] flex justify-between items-center py-3">
-        <a href="#" className="flex items-center gap-2 text-[18px]">
-          <IoWatchOutline />
+    <header className="w-full bg-white shadow-md fixed top-0 z-50">
+      <div className="w-[90%] max-w-7xl mx-auto flex justify-between items-center py-4">
+        {/* Logo */}
+        <a
+          href="#"
+          className="flex items-center gap-2 text-lg font-bold text-[#3858D6]"
+        >
+          <IoWatchOutline size={22} />
           Mohid
         </a>
-        <ul className="flex gap-4">
-          <li>Home</li>
-          <li>Brands</li>
-          <li>Recent Products</li>
-          <li>Contact</li>
-          <li>About</li>
-        </ul>
-        <ul className="flex gap-3">
-          <li>
+
+        {/* Navigation Links */}
+        <nav>
+          <ul className="hidden md:flex gap-6 text-gray-600 font-medium">
+            <li className="hover:text-[#3858D6] cursor-pointer transition">Home</li>
+            <li className="hover:text-[#3858D6] cursor-pointer transition">Brands</li>
+            <li className="hover:text-[#3858D6] cursor-pointer transition">
+              Recent Products
+            </li>
+            <li className="hover:text-[#3858D6] cursor-pointer transition">Contact</li>
+            <li className="hover:text-[#3858D6] cursor-pointer transition">About</li>
+          </ul>
+        </nav>
+
+        {/* Icons */}
+        <div className="flex gap-4 items-center text-gray-700 text-xl">
+          <button className="hover:text-[#3858D6] transition">
             <CiSearch />
-          </li>
-          <li>
+          </button>
+          <button className="hover:text-[#3858D6] transition">
             <FaUser />
-          </li>
-          <li>
+          </button>
+          <button className="hover:text-[#3858D6] transition">
             <FaCartShopping />
-          </li>
-          <li onClick={toggleTheme}>
+          </button>
+          <button onClick={toggleTheme} className="hover:text-[#3858D6] transition">
             <MdDarkMode />
-          </li>
-        </ul>
+          </button>
+        </div>
       </div>
     </header>
   );
